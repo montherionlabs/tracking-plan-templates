@@ -1,0 +1,11 @@
+# consent_mode: advanced
+platform;event;required;rules;count;consent;note
+ga4;view_item;"currency;value;items";"currency is iso4217; value >= 0; each item has item_id|item_name";at_least_once;analytics_storage;Página de producto
+ga4;add_to_cart;"currency;value;items";"currency is iso4217; value >= 0; each item has item_id|item_name";at_least_once;analytics_storage;Añadir al carrito
+ga4;begin_checkout;"currency;value;items";"currency is iso4217; value >= 0; each item has item_id|item_name";at_least_once;analytics_storage;Inicio del pago
+ga4;purchase;"transaction_id;currency;value;items";"currency is iso4217; value > 0; each item has item_id|item_name";once;analytics_storage;Confirmación del pedido
+meta;ViewContent;"content_ids;value;currency";"currency is iso4217; value >= 0";at_least_once;ad_storage;Página de producto
+meta;AddToCart;"content_ids;value;currency";"currency is iso4217; value >= 0";at_least_once;ad_storage;Añadir al carrito
+meta;InitiateCheckout;"value;currency";"currency is iso4217; value >= 0";at_least_once;ad_storage;Inicio del pago
+meta;Purchase;"value;currency";"currency is iso4217; value > 0";once;ad_storage;Confirmación del pedido. Añade event_id si además usas la API de conversiones
+meta;PageView;;;at_least_once;ad_storage;Todas las páginas

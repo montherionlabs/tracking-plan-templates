@@ -1,0 +1,11 @@
+# consent_mode: advanced
+platform,event,required,rules,count,consent,note
+ga4,view_item,currency;value;items,currency is iso4217; value >= 0; each item has item_id|item_name,at_least_once,analytics_storage,Product page
+ga4,add_to_cart,currency;value;items,currency is iso4217; value >= 0; each item has item_id|item_name,at_least_once,analytics_storage,Add to cart
+ga4,begin_checkout,currency;value;items,currency is iso4217; value >= 0; each item has item_id|item_name,at_least_once,analytics_storage,Checkout start
+ga4,purchase,transaction_id;currency;value;items,currency is iso4217; value > 0; each item has item_id|item_name,once,analytics_storage,Order confirmation
+meta,ViewContent,content_ids;value;currency,currency is iso4217; value >= 0,at_least_once,ad_storage,Product page
+meta,AddToCart,content_ids;value;currency,currency is iso4217; value >= 0,at_least_once,ad_storage,Add to cart
+meta,InitiateCheckout,value;currency,currency is iso4217; value >= 0,at_least_once,ad_storage,Checkout start
+meta,Purchase,value;currency,currency is iso4217; value > 0,once,ad_storage,Order confirmation. Add event_id if you also use the Conversions API
+meta,PageView,,,at_least_once,ad_storage,Every page

@@ -1,0 +1,9 @@
+platform;event;required;rules;count;consent;note
+ga4;view_item;"currency;value;items";"currency is iso4217; value >= 0; each item has item_id|item_name";at_least_once;;Página de producto
+ga4;add_to_cart;"currency;value;items";"currency is iso4217; value >= 0; each item has item_id|item_name";at_least_once;;Añadir al carrito
+ga4;begin_checkout;"currency;value;items";"currency is iso4217; value >= 0; each item has item_id|item_name";at_least_once;;Inicio del pago
+ga4;purchase;"transaction_id;currency;value;items";"currency is iso4217; value > 0; each item has item_id|item_name";once;;Confirmación del pedido
+meta;ViewContent;"content_ids;value;currency";"currency is iso4217; value >= 0";at_least_once;;Página de producto
+meta;AddToCart;"content_ids;value;currency";"currency is iso4217; value >= 0";at_least_once;;Añadir al carrito
+meta;InitiateCheckout;"value;currency";"currency is iso4217; value >= 0";at_least_once;;Inicio del pago
+meta;Purchase;"value;currency";"currency is iso4217; value > 0";once;;Confirmación del pedido. Añade event_id si además usas la API de conversiones

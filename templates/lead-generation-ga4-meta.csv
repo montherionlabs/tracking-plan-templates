@@ -1,0 +1,3 @@
+platform,event,required,rules,count,consent,note
+ga4,generate_lead,,currency is iso4217; value >= 0,once,,Form sent
+meta,Lead,,,once,,Form sent. Add event_id if you also use the Conversions API

@@ -1,0 +1,3 @@
+platform;event;required;rules;count;consent;note
+ga4;generate_lead;;"currency is iso4217; value >= 0";once;;Formulario enviado
+meta;Lead;;;once;;Formulario enviado. Añade event_id si además usas la API de conversiones
