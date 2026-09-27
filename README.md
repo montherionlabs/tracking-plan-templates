@@ -18,9 +18,9 @@ use them on their own, as a checklist or as a starting point for a client's trac
 | [`ecommerce-eu-consent-ga4-meta.csv`](templates/ecommerce-eu-consent-ga4-meta.csv) | The same funnel for a site with a consent banner: GA4 events need `analytics_storage`, Meta events need `ad_storage`, plus `PageView` |
 | [`lead-generation-ga4-meta.csv`](templates/lead-generation-ga4-meta.csv) | Lead forms: `generate_lead` (GA4) and `Lead` (Meta) |
 
-Each one also comes in Spanish (`.es.csv`), with the notes translated and `;` as the separator, which is what Excel
-expects in Spanish-speaking locales. Required parameters follow Google's GA4 e-commerce reference and Meta's standard
-events reference; adapt them to your site.
+Each one also comes in Spanish (`.es.csv`), with the notes translated and `;` as the separator, which Excel recognizes
+directly when its regional settings use a semicolon as the list separator. Required parameters follow Google's GA4
+e-commerce reference and Meta's standard events reference; adapt them to your site.
 
 ## Columns
 
@@ -80,7 +80,7 @@ Chrome para hacer QA de tracking: puedes cargarlas allí para comprobar contra e
 píxel de Meta de una web, o usarlas por separado como lista de comprobación o punto de partida del plan de un cliente.
 
 - **Archivos:** los de la tabla de arriba; los que terminan en `.es.csv` están en español y usan `;` como separador
-  (lo que espera Excel en español).
+  (Excel lo reconoce directamente cuando su configuración regional usa el punto y coma como separador de listas).
 - **Columnas:** `platform` (`ga4` o `meta`), `event`, `required` (parámetros obligatorios separados por `;`), `rules`
   (reglas separadas por `;`), `count` (`once`, `at_least_once`, `any` o `never`), `consent` (`analytics_storage`,
   `ad_storage`...) y `note` (nota libre). Solo `platform` y `event` son columnas obligatorias; las demás son opcionales, también `id` y `url`.
