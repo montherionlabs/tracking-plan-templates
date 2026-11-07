@@ -59,6 +59,27 @@ review the findings. The free version shows a preview of the validation (the sum
 first finding); Pro shows every finding. Tracklint checks the requests the browser sends during the journey you record;
 it does not verify processing inside Google Analytics or Meta, server-to-server integrations or legal compliance.
 
+## Checking a plan with the Tracklint MCP server (optional)
+
+If you use an AI client that supports the Model Context Protocol (Claude Desktop, Claude Code, Cursor or another stdio
+client), the free [`@montherion/tracklint-mcp`](https://www.npmjs.com/package/@montherion/tracklint-mcp) server can
+check these CSV files before you use them. Its `tracklint_check_plan` tool returns each row's structure (platform,
+event, required parameters, rule types, counts, consent types) and every error with its code and line number. It checks
+the plan itself, not a recorded journey.
+
+Requires Node.js 22.23.4 or later within the 22.x line, or 26.9.0 or later within the 26.x line. Example for Claude
+Desktop ([how to connect a local MCP server](https://modelcontextprotocol.io/docs/develop/connect-local-servers)); other
+clients may need the same settings in their own format:
+
+```json
+{"mcpServers": {"tracklint": {"command": "npx", "args": ["-y", "@montherion/tracklint-mcp@0.1.1"]}}}
+```
+
+Then ask your client, for example: *Check this tracking plan with tracklint_check_plan*, and paste the CSV.
+
+The server runs on your computer and its tools make no network requests, but the plan you paste and the tool's results
+may be sent to your AI provider by the client you use. Share only plans you are authorized to share.
+
 ## License
 
 [CC0 1.0](LICENSE): use, copy and adapt the templates for any purpose, including client work, without attribution.
@@ -97,6 +118,29 @@ píxel de Meta de una web, o usarlas por separado como lista de comprobación o 
   cada fila del plan y un primer hallazgo); Pro muestra todos los hallazgos. Tracklint revisa las peticiones que envía
   el navegador durante el recorrido que grabas, no el procesamiento dentro de Google Analytics o Meta, las
   integraciones de servidor a servidor ni el cumplimiento legal.
+
+## Comprobar un plan con el servidor MCP de Tracklint (opcional)
+
+Si usas un cliente de IA compatible con el Model Context Protocol (Claude Desktop, Claude Code, Cursor u otro cliente
+stdio), el servidor gratuito [`@montherion/tracklint-mcp`](https://www.npmjs.com/package/@montherion/tracklint-mcp)
+puede comprobar estos CSV antes de usarlos. Su herramienta `tracklint_check_plan` devuelve la estructura de cada fila
+(plataforma, evento, parámetros obligatorios, tipos de regla, repeticiones y tipos de consentimiento) y cada error con
+su código y número de línea. Comprueba el plan, no un recorrido grabado.
+
+Requiere Node.js 22.23.4 o posterior de la rama 22, o 26.9.0 o posterior de la rama 26. Ejemplo para Claude Desktop
+([cómo conectar un servidor MCP local](https://modelcontextprotocol.io/docs/develop/connect-local-servers)); otros
+clientes pueden necesitar los mismos datos en su propio formato:
+
+```json
+{"mcpServers": {"tracklint": {"command": "npx", "args": ["-y", "@montherion/tracklint-mcp@0.1.1"]}}}
+```
+
+Después pide a tu cliente, por ejemplo: *Comprueba este plan de medición con tracklint_check_plan*, y pega el CSV.
+
+El servidor se ejecuta en tu equipo y sus herramientas no hacen peticiones de red, pero el plan que pegues y los
+resultados de la herramienta pueden enviarse a tu proveedor de IA mediante el cliente que uses. Comparte solo planes que
+estés autorizado a compartir.
+
 - **Licencia:** [CC0 1.0](LICENSE): úsalas, cópialas y adáptalas para lo que quieras, también en trabajos para
   clientes, sin atribución. CC0 no concede derechos sobre marcas.
 
